@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Community Event Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --text-color: #333;
+            --bg-color: #f4f4f4;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            --radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: var(--radius);
+        }
+
+        nav {
+            background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--radius);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: white;
+            transform: translateX(-100%);
+            transition: var(--transition);
+        }
+
+        nav a:hover::before {
+            transform: translateX(0);
+        }
+
+        .top-bar {
+            background: linear-gradient(90deg, #ff416c 0%, #ff4b2b 100%);
+            padding: 0.5rem;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        section {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        #gallery {
+            padding: 20px;
+        }
+
+        .gallery-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 250px;
+            cursor: pointer;
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .event-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .card-caption {
+            padding: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        form {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: var(--radius);
+            transition: var(--transition);
+        }
+
+        button {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: var(--radius);
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            background: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .event-img {
+                width: 150px;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: var(--secondary-color);
+            color: white;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-bar">Local Community Event Portal - Connecting Communities, Creating Memories</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#events">Events</a>
+        <a href="#gallery">Gallery</a>
+        <a href="help.html" target="_blank">Help</a>
+    </nav>
+
+    <main>
+        <section id="home">
+            <h2>Welcome</h2>
+            <p>Welcome to the Community Event Portal! <span style="color: red; font-weight: bold;">Special Offer Today
+                    Only!</span></p>
+        </section>
+        <section id="gallery">
+            <h2>Past Events Gallery</h2>
+            <div class="gallery-container">
+                <div class="card" ondblclick="enlarge(this.querySelector('img'))">
+                    <img src="img1.jpg" alt="Event 1" class="event-img" />
+                    <div class="card-caption">Event 1</div>
+                </div>
+                <div class="card" ondblclick="enlarge(this.querySelector('img'))">
+                    <img src="img2.jpg" alt="Event 2" class="event-img" />
+                    <div class="card-caption">Event 2</div>
+                </div>
+                <div class="card" ondblclick="enlarge(this.querySelector('img'))">
+                    <img src="img3.jpg" alt="Event 3" class="event-img" />
+                    <div class="card-caption">Event 3</div>
+                </div>
+                <div class="card" ondblclick="enlarge(this.querySelector('img'))">
+                    <img src="img4.jpg" alt="Event 3" class="event-img" />
+                    <div class="card-caption">Event 4</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Register for an Event</h2>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Register Now</button>
+        </section>
+
+        <div class="modal fade" id="registerModal" tabindex="-1" aria-hidden="true">
+
+            <div class="modal-content p-4" style="max-width: 600px; margin: auto;">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"></div>
+                <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+
+
+                <form onsubmit="submitForm(); return false;">
+                    <label>Name:
+                        <input type="text" name="name" placeholder="Enter full name" required class="form-control">
+                    </label><br>
+
+                    <label>Email:
+                        <input type="email" name="email" placeholder="Enter email" required class="form-control">
+                    </label><br>
+
+                    <label>Phone:
+                        <input type="text" id="phone" class="form-control" onblur="validatePhone()">
+                    </label><br>
+
+                    <label>Date:
+                        <input type="date" name="date" required class="form-control">
+                    </label><br>
+
+                    <label>Event Type:
+                        <select id="eventType" onchange="showFee()" class="form-select">
+                            <option value="">Select</option>
+                            <option value="Workshop">Workshop</option>
+                            <option value="Seminar">Seminar</option>
+                            <option value="Fair">Fair</option>
+                        </select>
+                    </label>
+                    <div id="fee" class="mt-2 mb-3"></div>
+
+                    <label>Message:
+                        <textarea id="messageBox" onkeyup="countChars(this)" class="form-control"></textarea>
+                    </label>
+                    <div>Characters: <span id="charCount">0</span></div><br>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <output id="formOutput" class="mt-2 d-block"></output>
+                </form>
+            </div>
+
+        </div>
+        </div>
+
+        <section id="video">
+            <h2>Event Promo Video</h2>
+            <video width="320" height="240" controls oncanplay="videoReady()">
+                <source src="promo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <p id="videoStatus"></p>
+        </section>
+
+        <section id="preferences">
+            <h2>Save Your Preferences</h2>
+            <button onclick="savePreference()">Save Preference</button>
+            <button onclick="clearPreferences()">Clear Preferences</button>
+        </section>
+
+        <section id="geo">
+            <h2>Find Nearby Events</h2>
+            <button onclick="findLocation()">Find Nearby Events</button>
+            <p id="locationOutput"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Local City Council - Community Event Portal</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showFee() {
+            const type = document.getElementById("eventType").value;
+            const feeDiv = document.getElementById("fee");
+            let fee = '';
+            if (type === "Workshop") fee = "Fee: ₹200";
+            else if (type === "Seminar") fee = "Fee: ₹100";
+            else if (type === "Fair") fee = "Free Entry";
+            feeDiv.innerHTML = `<strong>${fee}</strong>`;
+        }
+
+        function countChars(input) {
+            document.getElementById("charCount").textContent = input.value.length;
+        }
+
+        function submitForm() {
+            document.getElementById("formOutput").textContent = "Form submitted successfully!";
+        }
+
+        function validatePhone() {
+            const phone = document.getElementById("phone").value;
+            if (!/^\d{10}$/.test(phone)) {
+                alert("Please enter a valid 10-digit phone number.");
+            }
+        }
+
+        function savePreference() {
+            const eventType = document.getElementById("eventType").value;
+            localStorage.setItem("preferredEvent", eventType);
+            alert("Preference saved.");
+        }
+
+        function clearPreferences() {
+            localStorage.clear();
+            alert("Preferences cleared.");
+        }
+
+        function findLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((pos) => {
+                    document.getElementById("locationOutput").textContent = `Latitude: ${pos.coords.latitude}, Longitude: ${pos.coords.longitude}`;
+                });
+            } else {
+                document.getElementById("locationOutput").textContent = "Geolocation is not supported.";
+            }
+        }
+
+        function videoReady() {
+            document.getElementById("videoStatus").textContent = "Video ready to play";
+        }
+
+        window.onload = function () {
+            const saved = localStorage.getItem("preferredEvent");
+            if (saved) {
+                document.getElementById("eventType").value = saved;
+                showFee();
+            }
+        };
+
+        function enlarge(img) {
+            window.open(img.src, '_blank');
+        }
+    </script>
+</body>
+
+</html>
