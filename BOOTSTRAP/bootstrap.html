@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOTSTRAP</title>
+
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+    
+    <style>
+        :root {
+            --bs-primary: #6f42c1;
+            --bs-primary-rgb: 111, 66, 193;
+            --bs-border-radius: 1rem;
+        }
+
+        .custom-gradient {
+            background: linear-gradient(135deg, var(--bs-primary) 0%, #4b0082 100%);
+        }
+    </style>
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-rocket-fill me-2"></i>Bootstrap Demo
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            Exercises
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#grid">Grid</a></li>
+                            <li><a class="dropdown-item" href="#forms">Forms</a></li>
+                            <li><a class="dropdown-item" href="#components">Components</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search">
+                    <button class="btn btn-outline-light" type="submit">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Responsive Grid -->
+        <section id="grid" class="mb-5">
+            <h2 class="display-4 mb-4">Responsive Grid System</h2>
+
+            <div class="row mb-4">
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title">Column 1</h3>
+                            <p class="card-text">Stacks vertically on mobile, two-per-row on tablets, three-per-row on
+                                desktops.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title">Column 2</h3>
+                            <p class="card-text">Uses .container, .row, and .col-* classes appropriately.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title">Column 3</h3>
+                            <p class="card-text">Fully responsive Bootstrap grid layout.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar Layout -->
+            <div class="row mb-5">
+                <div class="col-md-3 d-none d-md-block">
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">Sidebar</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#">Dashboard</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Profile</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Settings</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Main Content Area</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>This is the main content area that takes up 9 columns when the sidebar is visible (on
+                                medium screens and up).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Four Column Layout -->
+            <div class="row mb-5">
+                <div class="col-sm-6 col-md-3 mb-3">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <i class="bi bi-1-circle-fill fs-1 text-primary"></i>
+                            <h5 class="card-title">Feature 1</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 mb-3">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <i class="bi bi-2-circle-fill fs-1 text-primary"></i>
+                            <h5 class="card-title">Feature 2</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 mb-3">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <i class="bi bi-3-circle-fill fs-1 text-primary"></i>
+                            <h5 class="card-title">Feature 3</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 mb-3">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <i class="bi bi-4-circle-fill fs-1 text-primary"></i>
+                            <h5 class="card-title">Feature 4</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Centered Content -->
+            <div class="row mb-5 justify-content-center align-items-center bg-light py-4" style="min-height: 200px;">
+                <div class="col-md-6 text-center">
+                    <h3 class="text-capitalize">centered content</h3>
+                    <p class="lead text-muted">Using justify-content-center and align-items-center</p>
+                </div>
+            </div>
+
+            <!-- Column Reordering -->
+            <div class="row mb-5">
+                <div class="col-md-4 order-md-2 bg-danger p-4 text-white">
+                    <h3>First in HTML</h3>
+                    <p>But appears second on medium screens and up due to order-md-2</p>
+                </div>
+                <div class="col-md-4 order-md-1 bg-primary p-4 text-white">
+                    <h3>Second in HTML</h3>
+                    <p>But appears first on medium screens and up due to order-md-1</p>
+                </div>
+                <div class="col-md-4 order-md-3 bg-success p-4 text-white">
+                    <h3>Third in HTML</h3>
+                    <p>Maintains position with order-md-3</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Typography -->
+        <section class="mb-5">
+            <h2 class="display-4 mb-4">Typography Utilities</h2>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="display-1">Display 1</h1>
+                    <h2 class="display-2">Display 2</h2>
+                    <p class="lead">This is a lead paragraph. It stands out from regular paragraphs.</p>
+                    <p class="text-muted">This text is muted.</p>
+                    <p class="fw-bold">This text is bold.</p>
+                    <p class="fst-italic">This text is italic.</p>
+                </div>
+                <div class="col-md-6">
+                    <p class="text-uppercase">uppercase text</p>
+                    <p class="text-lowercase">LOWERCASE TEXT</p>
+                    <p class="text-capitalize">capitalized text example</p>
+                    <p class="text-decoration-underline">Underlined text</p>
+                    <p class="text-decoration-line-through">Strikethrough text</p>
+                    <p class="text-truncate" style="max-width: 200px;">This is a very long text that will be truncated
+                        with an ellipsis when it exceeds the available space.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Forms -->
+        <section id="forms" class="mb-5">
+            <h2 class="display-4 mb-4">Form Components</h2>
+
+            <div class="row">
+                <div class="col-lg-6 mb-5">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Registration Form</h5>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                                    <div class="form-text">We'll never share your email with anyone else.</div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="password">
+                                        <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="bio" class="form-label">Bio</label>
+                                    <textarea class="form-control" id="bio" rows="3"></textarea>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Gender</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gender" id="male">
+                                        <label class="form-check-label" for="male">
+                                            Male
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gender" id="female">
+                                        <label class="form-check-label" for="female">
+                                            Female
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="terms">
+                                    <label class="form-check-label" for="terms">I agree to terms and conditions</label>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Register</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Login Form (Floating Labels)</h5>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="floatingInput"
+                                        placeholder="name@example.com">
+                                    <label for="floatingInput">Email address</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="password" class="form-control" id="floatingPassword"
+                                        placeholder="Password">
+                                    <label for="floatingPassword">Password</label>
+                                </div>
+
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="remember">
+                                    <label class="form-check-label" for="remember">Remember me</label>
+                                </div>
+
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-primary" type="submit">Login</button>
+                                    <button class="btn btn-outline-secondary" type="button">
+                                        <i class="bi bi-google me-2"></i>Login with Google
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Buttons -->
+        <section class="mb-5">
+            <h2 class="display-4 mb-4">Button Components</h2>
+
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h5>Button Variants</h5>
+                    <button type="button" class="btn btn-primary m-1">Primary</button>
+                    <button type="button" class="btn btn-secondary m-1">Secondary</button>
+                    <button type="button" class="btn btn-success m-1">Success</button>
+                    <button type="button" class="btn btn-danger m-1">Danger</button>
+                    <button type="button" class="btn btn-warning m-1">Warning</button>
+                    <button type="button" class="btn btn-info m-1">Info</button>
+                    <button type="button" class="btn btn-light m-1">Light</button>
+                    <button type="button" class="btn btn-dark m-1">Dark</button>
+                    <button type="button" class="btn btn-link m-1">Link</button>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h5>Outline Buttons</h5>
+                    <button type="button" class="btn btn-outline-primary m-1">Primary</button>
+                    <button type="button" class="btn btn-outline-secondary m-1">Secondary</button>
+                    <button type="button" class="btn btn-outline-success m-1">Success</button>
+                    <button type="button" class="btn btn-outline-danger m-1">Danger</button>
+                    <button type="button" class="btn btn-outline-warning m-1">Warning</button>
+                    <button type="button" class="btn btn-outline-info m-1">Info</button>
+                    <button type="button" class="btn btn-outline-light m-1">Light</button>
+                    <button type="button" class="btn btn-outline-dark m-1">Dark</button>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h5>Button Sizes</h5>
+                    <button type="button" class="btn btn-primary btn-lg m-1">Large</button>
+                    <button type="button" class="btn btn-primary m-1">Default</button>
+                    <button type="button" class="btn btn-primary btn-sm m-1">Small</button>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h5>Button Groups</h5>
+                    <div class="btn-group mb-3" role="group">
+                        <button type="button" class="btn btn-primary">Left</button>
+                        <button type="button" class="btn btn-primary">Middle</button>
+                        <button type="button" class="btn btn-primary">Right</button>
+                    </div>
+
+                    <div class="btn-group mb-3" role="group">
+                        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
+                        <label class="btn btn-outline-primary" for="option1">Option 1</label>
+
+                        <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="option2">Option 2</label>
+
+                        <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="option3">Option 3</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tabbed Navigation -->
+        <section class="mb-5">
+            <h2 class="display-4 mb-4">Tabbed Navigation</h2>
+
+            <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+                        type="button">
+                        <i class="bi bi-house-door me-1"></i>Home
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+                        type="button">
+                        <i class="bi bi-person me-1"></i>Profile
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact"
+                        type="button">
+                        <i class="bi bi-envelope me-1"></i>Contact
+                    </button>
+                </li>
+            </ul>
+            <div class="tab-content p-3 border border-top-0 rounded-bottom" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel">
+                    <h5>Home Content</h5>
+                    <p>This is some placeholder content for the home tab.</p>
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel">
+                    <h5>Profile Content</h5>
+                    <p>This is some placeholder content for the profile tab.</p>
+                </div>
+                <div class="tab-pane fade" id="contact" role="tabpanel">
+                    <h5>Contact Content</h5>
+                    <p>This is some placeholder content for the contact tab.</p>
+                </div>
+            </div>
+
+            <h5 class="mt-4">Pill Navigation</h5>
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-home" type="button">Home</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-profile" type="button">Profile</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-contact" type="button">Contact</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel">Pill Home Content</div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel">Pill Profile Content</div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel">Pill Contact Content</div>
+            </div>
+        </section>
+
+        <!-- Cards and Media Objects -->
+        <section class="mb-5">
+            <h2 class="display-4 mb-4">Cards and Media Objects</h2>
+
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Profile">
+                        <div class="card-body text-center">
+                            <img src="https://via.placeholder.com/100"
+                                class="rounded-circle border border-3 border-primary mb-3" alt="Avatar">
+                            <h5 class="card-title">John Doe</h5>
+                            <p class="card-text text-muted">Web Developer</p>
+                            <div class="d-flex justify-content-center">
+                                <a href="#" class="btn btn-primary me-2"><i class="bi bi-person-lines-fill"></i>
+                                    Profile</a>
+                                <a href="#" class="btn btn-outline-secondary"><i class="bi bi-envelope"></i> Message</a>
+                            </div>
+                        </div>
+                        <div class="card-footer text-muted text-center">
+                            <small>Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="card mb-3">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="https://via.placeholder.com/300x200" class="img-fluid rounded-start"
+                                    alt="Media">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Media Object Example</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural
+                                        lead-in to additional content. This content is a little bit longer.</p>
+                                    <p class="card-text"><small class="text-muted">Posted 2 days ago</small></p>
+                                    <div class="d-flex">
+                                        <button class="btn btn-sm btn-outline-primary me-2">
+                                            <i class="bi bi-heart"></i> Like
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-secondary">
+                                            <i class="bi bi-chat"></i> Comment
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <img src="https://via.placeholder.com/64" class="rounded-circle me-3" alt="User">
+                                <div>
+                                    <h5>Another Media Example</h5>
+                                    <p>This is some content aligned next to an image using flex utilities.</p>
+                                    <div class="d-flex">
+                                        <button class="btn btn-sm btn-outline-primary me-2">
+                                            <i class="bi bi-thumbs-up"></i> Upvote
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger">
+                                            <i class="bi bi-flag"></i> Report
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spacing Utilities -->
+        <section class="mb-5">
+            <h2 class="display-4 mb-4">Spacing Utilities</h2>
+
+            <div class="bg-light p-5 mb-4">
+                <h5>Padding Examples</h5>
+                <div class="d-flex flex-wrap">
+                    <div class="p-1 bg-primary text-white m-1">p-1</div>
+                    <div class="p-2 bg-primary text-white m-1">p-2</div>
+                    <div class="p-3 bg-primary text-white m-1">p-3</div>
+                    <div class="p-4 bg-primary text-white m-1">p-4</div>
+                    <div class="p-5 bg-primary text-white m-1">p-5</div>
+                    <div class="px-3 py-2 bg-primary text-white m-1">px-3 py-2</div>
+                </div>
+            </div>
+
+            <div class="bg-light p-5 mb-4">
+                <h5>Margin Examples</h5>
+                <div class="d-flex flex-wrap">
+                    <div class="m-1 p-2 bg-success text-white">m-1</div>
+                    <div class="m-2 p-2 bg-success text-white">m-2</div>
+                    <div class="m-3 p-2 bg-success text-white">m-3</div>
+                    <div class="m-4 p-2 bg-success text-white">m-4</div>
+                    <div class="m-5 p-2 bg-success text-white">m-5</div>
+                    <div class="mx-auto p-2 bg-success text-white">mx-auto</div>
+                </div>
+            </div>
+
+            <h5 class="mb-3">Pricing Section with Spacing</h5>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">Free</h4>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>10 users included</li>
+                                <li>2 GB of storage</li>
+                                <li>Email support</li>
+                                <li>Help center access</li>
+                            </ul>
+                            <button type="button" class="btn btn-lg btn-outline-primary mt-auto">Sign up for
+                                free</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">Pro</h4>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h1 class="card-title pricing-card-title">$15<small class="text-muted fw-light">/mo</small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>20 users included</li>
+                                <li>10 GB of storage</li>
+                                <li>Priority email support</li>
+                                <li>Help center access</li>
+                            </ul>
+                            <button type="button" class="btn btn-lg btn-primary mt-auto">Get started</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">Enterprise</h4>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>30 users included</li>
+                                <li>15 GB of storage</li>
+                                <li>Phone and email support</li>
+                                <li>Help center access</li>
+                            </ul>
+                            <button type="button" class="btn btn-lg btn-primary mt-auto">Contact us</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Colors and Backgrounds -->
+        <section class="mb-5">
+            <h2 class="display-4 mb-4">Colors and Backgrounds</h2>
+
+            <div class="row g-4 mb-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="p-3 bg-primary text-white rounded">
+                        <h5>Primary</h5>
+                        <p>bg-primary text-white</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="p-3 bg-secondary text-white rounded">
+                        <h5>Secondary</h5>
+                        <p>bg-secondary text-white</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="p-3 bg-success text-white rounded">
+                        <h5>Success</h5>
+                        <p>bg-success text-white</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="p-3 bg-danger text-white rounded">
+                        <h5>Danger</h5>
+                        <p>bg-danger text-white</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="p-3 bg-warning text-dark rounded">
+                        <h5>Warning</h5>
+                        <p>bg-warning text-dark</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="p-3 bg-info text-dark rounded">
+                        <h5>Info</h5>
+                        <p>bg-info text-dark</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="p-3 bg-light text-dark rounded">
+                        <h5>Light</h5>
+                        <p>bg-light text-dark</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="p-3 bg-dark text-white rounded">
+                        <h5>Dark</h5>
+                        <p>bg-dark text-white</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-4 mb-4 custom-gradient text-white rounded">
+                <h5>Custom Gradient Background</h5>
+                <p>Using bg-gradient with bg-dark and white text</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="p-3 mb-3 bg-primary bg-opacity-10 border border-primary rounded">
+                        <h5 class="text-primary">Primary with Opacity</h5>
+                        <p class="text-primary">bg-primary bg-opacity-10</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-3 mb-3 bg-success bg-opacity-25 border border-success rounded">
+                        <h5 class="text-success">Success with Opacity</h5>
+                        <p class="text-success">bg-success bg-opacity-25</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Display and Visibility -->
+        <section class="mb-5">
+            <h2 class="display-4 mb-4">Display and Visibility</h2>
+
+            <div class="p-3 mb-4 bg-light rounded">
+                <div class="d-none d-md-block p-2 bg-info text-white rounded mb-2">
+                    Visible on medium screens and up (d-none d-md-block)
+                </div>
+                <div class="d-block d-md-none p-2 bg-danger text-white rounded mb-2">
+                    Visible on small screens only (d-block d-md-none)
+                </div>
+                <div class="d-lg-flex align-items-center p-2 bg-success text-white rounded">
+                    <span class="me-2">Flex container on large screens (d-lg-flex)</span>
+                    <button class="btn btn-sm btn-light">Button</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Main Content</h5>
+                            <p>This is the main content area. The sidebar to the right is hidden on mobile devices.</p>
+                            <div class="d-md-none alert alert-info">
+                                Sidebar is hidden on this screen size.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 d-none d-md-block">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Sidebar</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>This sidebar only shows on tablets and above (d-none d-md-block).</p>
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Link 1</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Link 2</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Borders, Shadows, and Rounded Corners -->
+        <section class="mb-5">
+            <h2 class="display-4 mb-4">Borders, Shadows, and Rounded Corners</h2>
+
+            <div class="row mb-4">
+                <div class="col-md-4 text-center">
+                    <img src="https://via.placeholder.com/150"
+                        class="border border-primary border-3 rounded-circle mb-3" alt="Rounded Circle">
+                    <p>border border-primary border-3 rounded-circle</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="https://via.placeholder.com/150" class="border border-danger border-5 rounded-pill mb-3"
+                        alt="Rounded Pill">
+                    <p>border border-danger border-5 rounded-pill</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="https://via.placeholder.com/150" class="border border-success border-2 rounded-3 mb-3"
+                        alt="Rounded 3">
+                    <p>border border-success border-2 rounded-3</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Small Shadow</h5>
+                            <p class="card-text">shadow-sm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md4 mb-4">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">Regular Shadow</h5>
+                            <p class="card-text">shadow</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-lg rounded-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Large Shadow</h5>
+                            <p class="card-text">shadow-lg rounded-4</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    <div class="row">
+            <div class="col-md-6">
+                <div class="p-3 mb-3 border-start border-primary border-5">
+                    <h5>Border Start</h5>
+                    <p>border-start border-primary border-5</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-3 mb-3 border-end border-danger border-5">
+                    <h5>Border End</h5>
+                    <p>border-end border-danger border-5</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-3 mb-3 border-top border-success border-5">
+                    <h5>Border Top</h5>
+                    <p>border-top border-success border-5</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-3 mb-3 border-bottom border-warning border-5">
+                    <h5>Border Bottom</h5>
+                    <p>border-bottom border-warning border-5</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Positioning Utilities -->
+    <section class="mb-5">
+        <h2 class="display-4 mb-4">Positioning Utilities</h2>
+        
+        <div class="position-relative bg-light p-5 mb-4" style="height: 200px;">
+            <div class="position-absolute top-0 start-0 bg-primary text-white p-2">Top Start</div>
+            <div class="position-absolute top-0 end-0 bg-primary text-white p-2">Top End</div>
+            <div class="position-absolute top-50 start-50 translate-middle bg-primary text-white p-2">Centered</div>
+            <div class="position-absolute bottom-0 start-0 bg-primary text-white p-2">Bottom Start</div>
+            <div class="position-absolute bottom-0 end-0 bg-primary text-white p-2">Bottom End</div>
+        </div>
+        
+        <div class="position-relative mb-4" style="height: 150px;">
+            <img src="https://via.placeholder.com/300x150" class="img-fluid rounded" alt="Sample">
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                New
+            </span>
+        </div>
+        
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Sticky Top Example</h5>
+                <div class="sticky-top bg-light p-2 mb-3">This element is sticky to the top</div>
+                <p>Scroll to see the sticky behavior. The element above will stick to the top of the viewport as you scroll past it.</p>
+                <div style="height: 800px;"></div> <!-- Spacer to enable scrolling -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Bootstrap Icons -->
+    <section class="mb-5">
+        <h2 class="display-4 mb-4">Bootstrap Icons</h2>
+        
+        <div class="row mb-4">
+            <div class="col-12">
+                <h5>Social Media Icons</h5>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="#" class="btn btn-outline-primary btn-lg rounded-circle">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline-info btn-lg rounded-circle">
+                        <i class="bi bi-twitter"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline-danger btn-lg rounded-circle">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline-primary btn-lg rounded-circle">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline-success btn-lg rounded-circle">
+                        <i class="bi bi-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Icon Buttons</h5>
+                <div class="d-flex flex-wrap gap-2 mb-4">
+                    <button class="btn btn-primary">
+                        <i class="bi bi-save"></i> Save
+                    </button>
+                    <button class="btn btn-outline-secondary">
+                        <i class="bi bi-trash"></i> Delete
+                    </button>
+                    <button class="btn btn-success">
+                        <i class="bi bi-check-circle"></i> Approve
+                    </button>
+                    <button class="btn btn-warning">
+                        <i class="bi bi-exclamation-triangle"></i> Warning
+                    </button>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <h5>Icon-only Buttons</h5>
+                <div class="d-flex flex-wrap gap-2 mb-4">
+                    <button class="btn btn-outline-primary" title="Edit">
+                        <i class="bi bi-pencil"></i>
+                    </button>
+                    <button class="btn btn-outline-danger" title="Delete">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                    <button class="btn btn-outline-success" title="Check">
+                        <i class="bi bi-check"></i>
+                    </button>
+                    <button class="btn btn-outline-info" title="Info">
+                        <i class="bi bi-info-circle"></i>
+                    </button>
+                    <button class="btn btn-outline-dark" title="Settings">
+                        <i class="bi bi-gear"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Common Icons</h5>
+                <div class="d-flex flex-wrap gap-3">
+                    <div class="text-center">
+                        <i class="bi bi-house-door fs-3 d-block"></i>
+                        <small>house-door</small>
+                    </div>
+                    <div class="text-center">
+                        <i class="bi bi-person fs-3 d-block"></i>
+                        <small>person</small>
+                    </div>
+                    <div class="text-center">
+                        <i class="bi bi-envelope fs-3 d-block"></i>
+                        <small>envelope</small>
+                    </div>
+                    <div class="text-center">
+                        <i class="bi bi-heart fs-3 d-block"></i>
+                        <small>heart</small>
+                    </div>
+                    <div class="text-center">
+                        <i class="bi bi-search fs-3 d-block"></i>
+                        <small>search</small>
+                    </div>
+                    <div class="text-center">
+                        <i class="bi bi-bell fs-3 d-block"></i>
+                        <small>bell</small>
+                    </div>
+                    <div class="text-center">
+                        <i class="bi bi-cart fs-3 d-block"></i>
+                        <small>cart</small>
+                    </div>
+                    <div class="text-center">
+                        <i class="bi bi-star fs-3 d-block"></i>
+                        <small>star</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- JavaScript Plugins -->
+    <section class="mb-5">
+        <h2 class="display-4 mb-4">JavaScript Plugins</h2>
+        
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <h5>Modal Popup</h5>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Launch Demo Modal
+                </button>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Modal Title</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>This is a Bootstrap modal popup. It can contain any content you want.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+                <h5>Tooltip Example</h5>
+                <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
+                    Hover for tooltip
+                </button>
+            </div>
+        </div>
+        
+        <h5 class="mb-3">Accordion</h5>
+        <div class="accordion mb-4" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                        Accordion Item #1
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                        Accordion Item #2
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                        Accordion Item #3
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <h5 class="mb-3">Toast Notification</h5>
+        <button type="button" class="btn btn-primary" id="liveToastBtn">Show Toast</button>
+        
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+            <div id="liveToast" class="toast" role="alert">
+                <div class="toast-header">
+                    <strong class="me-auto">Bootstrap</strong>
+                    <small>Just now</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+                </div>
+                <div class="toast-body">
+                    Hello, world! This is a toast message.
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Fixed Footer -->
+<footer class="bg-dark text-white py-4 mt-5 position-fixed bottom-0 w-100 d-none">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h5>About Us</h5>
+                <p>This is a demo footer that would normally be fixed to the bottom.</p>
+            </div>
+            <div class="col-md-6">
+                <h5>Connect</h5>
+                <div class="d-flex gap-3">
+                    <a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Initialize tooltips
+    document.addEventListener('DOMContentLoaded', function() {
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        });
+        
+        // Initialize toast
+        var toastEl = document.getElementById('liveToast')
+        var toastBtn = document.getElementById('liveToastBtn')
+        if (toastEl && toastBtn) {
+            var toast = new bootstrap.Toast(toastEl)
+            toastBtn.addEventListener('click', function () {
+                toast.show()
+            })
+        }
+    })
+</script>
+</body>
+</html>

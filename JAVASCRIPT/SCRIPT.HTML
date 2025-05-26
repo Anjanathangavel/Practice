@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Event Portal</title>
+    <link rel="stylesheet" href="SCRIPT.CSS">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Community Event Portal</h1>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search events...">
+            <select id="categoryFilter">
+                <option value="all">All Categories</option>
+                <option value="music">Music</option>
+                <option value="workshop">Workshop</option>
+                <option value="sports">Sports</option>
+                <option value="art">Art</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <section class="event-form">
+            <h2>Add New Event</h2>
+            <form id="eventForm">
+                <div class="form-group">
+                    <label for="eventName">Event Name:</label>
+                    <input type="text" id="eventName" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventDate">Date:</label>
+                    <input type="date" id="eventDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventCategory">Category:</label>
+                    <select id="eventCategory" required>
+                        <option value="music">Music</option>
+                        <option value="workshop">Workshop</option>
+                        <option value="sports">Sports</option>
+                        <option value="art">Art</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="eventLocation">Location:</label>
+                    <input type="text" id="eventLocation" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventSeats">Max Seats:</label>
+                    <input type="number" id="eventSeats" min="1" required>
+                </div>
+                <button type="submit">Add Event</button>
+            </form>
+        </section>
+
+        <section class="registration-form">
+            <h2>Register for an Event</h2>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="userName">Name:</label>
+                    <input type="text" id="userName" required>
+                </div>
+                <div class="form-group">
+                    <label for="userEmail">Email:</label>
+                    <input type="email" id="userEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="selectedEvent">Select Event:</label>
+                    <select id="selectedEvent" required>
+                        <!-- Will be populated by JavaScript -->
+                    </select>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+        </section>
+
+        <section class="events-container">
+            <h2>Upcoming Events</h2>
+            <div id="eventsList" class="events-grid"></div>
+        </section>
+    </main>
+
+    <div id="loadingSpinner" class="spinner"></div>
+
+    <script src="main.js"></script>
+</body>
+</html>
